@@ -21,36 +21,22 @@ Install the Waveshare e-Paper drivers using these instructions: https://www.wave
 
 ### Weather Forecast
 I'm using OpenWeatherMap JSON for my forecasts as the API is free for up to 1,000 calls a day.
-I could have called the API directly from the Pi Zero with python, but I am lazy and Node-Red makes parsing JSON *so* easy. Install Node-Red from [here](https://nodered.org/) and feel free to use my flow export which you can find [here](https://github.com/DennisFaucher/pizero-weather/blob/master/weather_large.json). Change the OpenWeatherMap API to your personal API.
+I could have called the API directly from the Pi Zero with python, but I am lazy and Node-Red makes parsing JSON *so* easy. Install Node-Red from [here](https://nodered.org/) and feel free to use my flow export which you can find [here](https://github.com/DennisFaucher/pizero-weather/blob/master/weather_large.json). Change the OpenWeatherMap API to your personal API. This flow writes a weather text file to my web server every 15 minutes which the python script running on the Pi Zero picks up for display.
 
-### Install the lighttpd server and PHP somewhere. You can use a local Linux host or a cloud Linux VM. Steps are:
-
-sudo apt install lighttpd
-
-sudo add-apt-repository ppa:ondrej/php
-
-sudo apt-get update
-
-sudo apt-get install -y php5.6
-
-sudo apt-get install php5-mysql
-
-sudo apt install -y php5.6-cgi
-
-sudo lighty-enable-mod fastcgi-php
-
-sudo service lighttpd force-reload
-
-sudo chown www-data:www-data /var/www
-
-sudo chmod 775 /var/www
-
-sudo usermod -a -G www-data [your_linux_username]
+### Python Script
+The script is pretty simple and based on the e-Paper examples. From a high level the script:
+* Initalized the e-Paper display
+* Gets the current time into a variable
+* Gets the current weather into a variable
+* Gets the weather forecast into a variable
+* Defines font sizes
+* Draws borders
+* Alternates between time + current conditions and time + forecast every 10 seconds
+Not very elegant, but gets the job done
 
 ### Copy files into place
-Copy my pi.html and action.php to your linux server directory /var/www/html
-
-Copy my greetings.py to your rPi in the directory /home/pi/e-Paper/Pi/python/examples
+Import my weather flow into your node-red. Change the OpenWeatherMap API as well as the fiel save location for einklarge.txt.
+Copy my weatherbig.py to your rPi in the directory /home/pi/e-Paper/Pi/python/examples. Change as needed to pull your copy of einklarge.txt.
 ### Autostart
 Add this entry into /etc/rc.local on your rPi
 
