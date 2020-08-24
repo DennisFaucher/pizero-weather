@@ -21,7 +21,7 @@ Install the Waveshare e-Paper drivers using these instructions: https://www.wave
 
 ### Weather Forecast
 I'm using OpenWeatherMap JSON for my forecasts as the API is free for up to 1,000 calls a day.
-I could have called the API directly from the Pi Zero with python, but I am lazy and Node-Red makes parsing JSON *so* easy. Install Node-Red from [here] (https://nodered.org/) and feel free to use my flow export which you can find [here] (https://github.com/DennisFaucher/pizero-weather/blob/master/weather_large.json). Change the OpenWeatherMap API to your personal API.
+I could have called the API directly from the Pi Zero with python, but I am lazy and Node-Red makes parsing JSON *so* easy. Install Node-Red from [here](https://nodered.org/) and feel free to use my flow export which you can find [here](https://github.com/DennisFaucher/pizero-weather/blob/master/weather_large.json). Change the OpenWeatherMap API to your personal API.
 
 ### Install the lighttpd server and PHP somewhere. You can use a local Linux host or a cloud Linux VM. Steps are:
 
