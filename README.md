@@ -50,3 +50,5 @@ python3 /home/pi/e-Paper/Pi/python/examples/weatherbig.py  > /dev/null 2>&1 &
 reboot
 
 Enjoy!
+
+Demo video [here]https://youtu.be/eoPMCVJt_kg
