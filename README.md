@@ -25,7 +25,7 @@ I'm using OpenWeatherMap JSON for my forecasts as the API is free for up to 1,00
 I could have called the API directly from the Pi Zero with python, but I am lazy and Node-Red makes parsing JSON *so* easy. Install Node-Red from [here](https://nodered.org/) and feel free to use my flow export which you can find [here](https://github.com/DennisFaucher/pizero-weather/blob/master/weather_large.json). Change the OpenWeatherMap API to your personal API. This flow writes a weather text file to my web server every 15 minutes which the python script running on the Pi Zero picks up for display.
 
 ### Python Script
-The script is pretty simple and based on the e-Paper examples. From a high level the script:
+The [script](https://github.com/DennisFaucher/pizero-weather/blob/master/weatherbig.py) is pretty simple and based on the e-Paper examples. From a high level the script:
 
 * Initalized the e-Paper display
 * Gets the current time into a variable
