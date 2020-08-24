@@ -1,20 +1,9 @@
 # pizero-weather
-##Display Time &amp; Weather on Pi Zero e-Ink Display
+## Display Time &amp; Weather on Pi Zero e-Ink Display
 ![Weather](https://github.com/DennisFaucher/pizero-weather/blob/master/images/now.jpg)
 ![Forecast](https://github.com/DennisFaucher/pizero-weather/blob/master/images/forecast.jpg)
 
-
-This is a follow-on idea to my ugly Christmas sweater accessory https://github.com/DennisFaucher/pizero-epaper-movie. The rotating movie stills are cute, but i wanted to make an interactive piece of wearable art. The major issue was "How to gather input?" I failed in many ways before landing on something that worked. 
-
- 1) Email automation. Fail. Python could not authenticate to cranky, secure gMail. Example here: https://repl.it/talk/learn/How-to-Make-a-Python-Email-Bot/8194
- 
- 2) Twitter automation. Success, but I would have to be following everyone who wanted to send a greeting which I don't. Example here: https://github.com/dataquestio/twitter-scrape 
- 
- 3) IFTTT SMS to DropBox to shell script automation. Fail. Requires my Pi to have a public FQDN which it does not. Example here: https://www.raspberrypi.org/forums/viewtopic.php?t=166529
- 
- 4) Android Tasker SMS kicking off rexec. Fail. Tasker seems to have forgotten how to read SMS. 
- 
- 5) Web form that wites to a file to be picked up my the rpPi. Success. This is the method I will detail.
+This is a slight modification to my Holiday Greetings repo https://github.com/DennisFaucher/pizero-epaper-greetings. I built this beautiful e-Ink Pi Zero with battery to use as a pwnagotchi and then as an automagic holiday greetings badge.  It was time for something new. How about the time and weather (alternating current and forecast) so large that maybe I could even make it out without my reading glasses? Sure, why not. 
  
  ## Hardware
  Raspberry Pi Zero W. WITH PINS as I am terrible at soldering. I purchased mine here: https://www.aliexpress.com/item/32979703845.html
