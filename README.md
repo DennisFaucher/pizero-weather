@@ -21,10 +21,12 @@ Install the Waveshare e-Paper drivers using these instructions: https://www.wave
 
 ### Weather Forecast
 I'm using OpenWeatherMap JSON for my forecasts as the API is free for up to 1,000 calls a day.
+
 I could have called the API directly from the Pi Zero with python, but I am lazy and Node-Red makes parsing JSON *so* easy. Install Node-Red from [here](https://nodered.org/) and feel free to use my flow export which you can find [here](https://github.com/DennisFaucher/pizero-weather/blob/master/weather_large.json). Change the OpenWeatherMap API to your personal API. This flow writes a weather text file to my web server every 15 minutes which the python script running on the Pi Zero picks up for display.
 
 ### Python Script
 The script is pretty simple and based on the e-Paper examples. From a high level the script:
+
 * Initalized the e-Paper display
 * Gets the current time into a variable
 * Gets the current weather into a variable
@@ -32,19 +34,19 @@ The script is pretty simple and based on the e-Paper examples. From a high level
 * Defines font sizes
 * Draws borders
 * Alternates between time + current conditions and time + forecast every 10 seconds
+
 Not very elegant, but gets the job done
 
 ### Copy files into place
 Import my weather flow into your node-red. Change the OpenWeatherMap API as well as the fiel save location for einklarge.txt.
+
 Copy my weatherbig.py to your rPi in the directory /home/pi/e-Paper/Pi/python/examples. Change as needed to pull your copy of einklarge.txt.
+
 ### Autostart
 Add this entry into /etc/rc.local on your rPi
 
-python3 /home/pi/e-Paper/Pi/python/examples/greetings.py  > /dev/null 2>&1 &
+python3 /home/pi/e-Paper/Pi/python/examples/weatherbig.py  > /dev/null 2>&1 &
 
 reboot
-## Test
-Point your web browser to http://[address-of-your-Linux-server]/pi.html. You should see this web form:
-![Web Form](https://github.com/DennisFaucher/pizero-epaper-greetings/blob/master/Screen%20Shot%202019-12-17%20at%2010.04.27%20PM.png)
 
-Type in a greeting, click Submit and within 60 seconds the greeting should show up on the rPi
+Enjoy!
